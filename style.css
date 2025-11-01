@@ -1,104 +1,250 @@
+/* --- General Body and Container --- */
 body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f9;
-    color: #333;
+    /* Ganti font-family untuk teks isi (Titillium Web) */
+    font-family: 'Titillium Web', sans-serif; 
+    background-color: #000000; /* Latar Belakang Hitam */
+    color: #f0f0f0; /* Teks Putih */
     margin: 0;
     padding: 20px;
     display: flex;
     justify-content: center;
-    align-items: flex-start;
+    align-items: flex-start; 
+    min-height: 100vh; 
+    box-sizing: border-box; 
 }
 
 .container {
-    background-color: #ffffff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-    max-width: 700px;
+    background-color: #1a1a1a; /* Kotak konten sedikit lebih terang dari latar */
+    padding: 40px; /* Padding lebih besar */
+    border-radius: 12px; /* Sudut lebih membulat */
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.4); /* Bayangan lebih dalam */
+    max-width: 800px; /* Lebar maksimum lebih besar */
     width: 100%;
+    margin-top: 30px; /* Beri sedikit jarak dari atas */
 }
 
+/* --- Headings (Judul) --- */
 h1, h2 {
-    color: #0056b3;
-    border-bottom: 2px solid #0056b3;
-    padding-bottom: 10px;
-    margin-bottom: 20px;
+    /* Ganti font-family untuk judul (Merriweather) */
+    font-family: 'Merriweather', serif; 
+    color: #FFDDC1; 
+    text-align: center; 
+    border-bottom: 2px solid #2A0001; 
+    padding-bottom: 15px; 
+    margin-bottom: 30px; 
+    text-transform: uppercase; 
+    letter-spacing: 1.5px; 
 }
 
-/* Bagian Perjanjian */
+h2 {
+    font-size: 1.8em;
+    color: #ffffff; /* Judul sub-section putih */
+    border-bottom: 1px solid rgba(42, 0, 1, 0.5); /* Garis bawah lebih tipis dan transparan */
+    text-align: left;
+    margin-bottom: 25px;
+}
+
+
+/* --- Perjanjian Section --- */
 #perjanjian-section {
-    margin-bottom: 30px;
-    padding: 20px;
-    border: 1px solid #ddd;
-    border-radius: 6px;
-    background-color: #f9f9ff;
+    margin-bottom: 40px;
+    padding: 30px;
+    border: 1px solid #2A0001; /* Border merah maroon */
+    border-radius: 8px;
+    background-color: #222222; /* Latar belakang bagian perjanjian */
+    text-align: center; /* Teks di tengah */
+}
+
+#perjanjian-section p {
+    line-height: 1.8; /* Jarak antar baris lebih lebar */
+    font-size: 1.1em;
+    margin-bottom: 25px;
+    color: #dddddd; /* Warna teks lebih terang */
 }
 
 .button-unduh {
     display: inline-block;
-    background-color: #28a745;
-    color: white;
-    padding: 10px 20px;
+    background-color: #2A0001; /* Merah Maroon */
+    color: #ffffff;
+    padding: 12px 28px;
     text-decoration: none;
-    border-radius: 5px;
-    margin: 15px 0;
-    transition: background-color 0.3s;
+    border-radius: 6px;
+    margin: 20px 0;
+    font-weight: bold;
+    font-size: 1.1em;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transisi halus */
+    border: 1px solid #2A0001; /* Border sama dengan background */
 }
 
 .button-unduh:hover {
-    background-color: #218838;
+    background-color: #4a0002; /* Maroon lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek naik sedikit */
+    border-color: #4a0002;
 }
 
 .persetujuan-area {
-    margin-top: 20px;
-    padding-top: 15px;
-    border-top: 1px dashed #ccc;
+    margin-top: 30px;
+    padding-top: 20px;
+    border-top: 1px dashed rgba(255, 255, 255, 0.2); /* Garis putus-putus putih transparan */
+    display: flex; /* Untuk menata checkbox dan label */
+    align-items: center;
+    justify-content: center; /* Tengah */
+    gap: 10px; /* Jarak antara checkbox dan label */
 }
 
-/* Formulir */
+.persetujuan-area input[type="checkbox"] {
+    transform: scale(1.3); /* Ukuran checkbox lebih besar */
+    accent-color: #2A0001; /* Warna centang maroon */
+    cursor: pointer;
+}
+
+.persetujuan-area label {
+    font-size: 1.05em;
+    color: #ffffff;
+    cursor: pointer;
+}
+
+/* --- Formulir Section --- */
+#formulir-section button[type="submit"] {
+    background-color: #2A0001; 
+    color: white;
+    padding: 14px 25px;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    margin-top: 30px;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600; /* Menggunakan bobot yang telah diimpor (Titillium Web) */
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
+}
+
 #formulir-section label {
     display: block;
-    margin-top: 15px;
+    margin-top: 20px;
+    margin-bottom: 8px;
     font-weight: bold;
+    color: #FFDDC1; /* Warna label cerah */
+    font-size: 1.05em;
 }
 
 #formulir-section input[type="text"],
 #formulir-section input[type="email"],
 #formulir-section input[type="tel"],
 #formulir-section textarea {
-    width: 100%;
-    padding: 10px;
+    width: calc(100% - 20px); /* Kurangi padding dari lebar */
+    padding: 12px;
     margin-top: 5px;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    box-sizing: border-box; /* Penting agar padding tidak melebarkan input */
+    border: 1px solid #444; /* Border input abu-abu gelap */
+    border-radius: 5px;
+    box-sizing: border-box;
+    background-color: #333333; /* Latar belakang input lebih gelap */
+    color: #ffffff; /* Teks input putih */
+    font-size: 1em;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+#formulir-section input[type="text"]:focus,
+#formulir-section input[type="email"]:focus,
+#formulir-section input[type="tel"]:focus,
+#formulir-section textarea:focus {
+    border-color: #2A0001; /* Border maroon saat fokus */
+    outline: none;
+    box-shadow: 0 0 0 3px rgba(42, 0, 1, 0.3); /* Bayangan saat fokus */
+}
+
+#formulir-section textarea {
+    resize: vertical; /* Hanya bisa resize vertikal */
+    min-height: 100px;
 }
 
 #formulir-section button[type="submit"] {
-    background-color: #007bff;
+    background-color: #2A0001; /* Merah Maroon */
     color: white;
-    padding: 12px 20px;
+    padding: 14px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    margin-top: 25px;
+    margin-top: 30px;
     width: 100%;
-    font-size: 16px;
-    transition: background-color 0.3s;
+    font-size: 1.1em;
+    font-weight: bold;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    letter-spacing: 1px;
 }
 
 #formulir-section button[type="submit"]:hover {
-    background-color: #0056b3;
+    background-color: #4a0002; /* Maroon lebih gelap saat hover */
+    transform: translateY(-2px); /* Efek naik sedikit */
 }
 
 #formulir-section button[type="submit"]:disabled {
-    background-color: #999;
+    background-color: #555555; /* Abu-abu gelap saat disabled */
     cursor: not-allowed;
+    transform: translateY(0);
 }
 
-/* Responsif dasar */
-@media (max-width: 600px) {
+/* --- Responsive Design --- */
+@media (max-width: 768px) {
     .container {
-        padding: 20px;
+        padding: 25px;
+        margin-top: 20px;
+    }
+
+    h1 {
+        font-size: 2em;
+        margin-bottom: 20px;
+    }
+
+    h2 {
+        font-size: 1.5em;
+        margin-bottom: 20px;
+    }
+
+    .button-unduh {
+        padding: 10px 20px;
+        font-size: 1em;
+    }
+
+    .persetujuan-area {
+        flex-direction: column; /* Stack checkbox dan label di layar kecil */
+        gap: 5px;
+    }
+
+    .persetujuan-area input[type="checkbox"] {
+        margin-bottom: 5px;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 15px;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
+
+    h1 {
+        font-size: 1.6em;
+        padding-bottom: 10px;
+    }
+
+    h2 {
+        font-size: 1.3em;
+        padding-bottom: 8px;
+    }
+
+    #perjanjian-section, #formulir-section {
+        padding: 15px;
+    }
+
+    .button-unduh {
+        width: 100%; /* Tombol unduh full width */
+        box-sizing: border-box;
+    }
+
+    #formulir-section button[type="submit"] {
+        font-size: 1em;
+        padding: 12px;
     }
 }
