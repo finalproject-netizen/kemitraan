@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Perjanjian Kemitraan</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <div class="container">
+        <h1>Persetujuan Kemitraan Pengembangan Pendidikan</h1>
+        
+        <div id="perjanjian-section">
+            <h2>Langkah 1: Baca dan Setujui Perjanjian</h2>
+            <p>Silakan baca dengan saksama Dokumen Perjanjian Kemitraan di bawah ini. Dengan mengisi formulir, Anda menyatakan setuju terhadap seluruh ketentuan yang berlaku.</p>
+            
+            <a href="https://drive.google.com/file/d/1uikEXowOxqePg46XDDBM9zSsb36euZxN/view?usp=drive_link" target="_blank" class="button-unduh">
+                Baca Dokumen Perjanjian dan Persetujuan
+            </a>
+            
+            <div class="persetujuan-area">
+                <input type="checkbox" id="setuju-checkbox">
+                <label for="setuju-checkbox">Saya telah membaca, memahami, dan menyetujui seluruh isi Dokumen Perjanjian Kemitraan.</label>
+            </div>
+        </div>
+
+      <form id="formulir-section" 
+        action="mailto:ash.vyracorporation@gmail.com" 
+        method="POST" 
+        enctype="text/plain"
+        style="display: none;">
+        
+            <h2>Langkah 2: Isi Data Kemitraan</h2>
+            
+            <label for="nama_lembaga">Nama Lembaga/Individu:</label>
+            <input type="text" id="nama_lembaga" name="Nama_Lembaga" required>
+            
+            <label for="penanggung_jawab">Nama Penanggung Jawab:</label>
+            <input type="text" id="penanggung_jawab" name="Penanggung_Jawab" required>
+
+            <label for="email">Email Resmi:</label>
+            <input type="email" id="email" name="Email_Resmi" required>
+            
+            <label for="nomor_telepon">Nomor Telepon/Whatsapp:</label>
+            <input type="tel" id="nomor_telepon" name="Nomor_Telepon" required>
+
+            <input type="hidden" name="Persetujuan_Perjanjian" value="Ya, telah disetujui melalui checkbox">
+
+            <button type="submit" id="submit-button">Kirim Formulir Kemitraan</button>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
